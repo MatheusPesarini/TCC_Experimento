@@ -1,27 +1,30 @@
-FROM alpine:3.22
+FROM node:lts-alpine
 
-ENV NODE_VERSION 22.18.0
+# Versões fixadas
+ARG SONAR_SCANNER_VERSION=5.0.1.3006
 
-RUN apk add --no-cache curl python3 py3-pip gnupg
+# Instala dependências extras
+RUN apk add --no-cache bash python3 py3-pip curl git wget unzip ca-certificates openjdk17-jre-headless
 
-RUN curl -fsSL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz" -o node.tar.xz \
-    && tar -xf node.tar.xz \
-    && mv "node-v${NODE_VERSION}-linux-x64" /usr/local/lib/node \
-    && rm node.tar.xz \
-    && ln -s /usr/local/lib/node/bin/node /usr/local/bin/node \
-    && ln -s /usr/local/lib/node/bin/npm /usr/local/bin/npm \
-    && ln -s /usr/local/lib/node/bin/npx /usr/local/bin/npx
+# Evita reclamações do pip e permite instalar no sistema (PEP 668)
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_BREAK_SYSTEM_PACKAGES=1
 
-# Instala as ferramentas globais de análise (Semgrep e SonarQube Scanner)
-RUN pip3 install semgrep
-RUN npm install -g sonarqube-scanner
+# Semgrep (pode fixar versão)
+RUN pip install --no-cache-dir semgrep
 
-# Instala o k6
-# (O processo de instalação do k6 no Alpine é um pouco diferente)
-RUN apk add --no-cache k6
+# Sonar Scanner (usa diretório específico, evita wildcard ambíguo)
+RUN wget -q https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip \
+    && unzip -q sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip \
+    && mv sonar-scanner-${SONAR_SCANNER_VERSION}-linux /opt/sonar-scanner \
+    && rm sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip \
+    && ln -s /opt/sonar-scanner/bin/sonar-scanner /usr/local/bin/sonar-scanner
 
-# Define o diretório de trabalho dentro do container
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk \
+    PATH=/opt/sonar-scanner/bin:$JAVA_HOME/bin:$PATH \
+    SONAR_SCANNER_OPTS="-server"
+
 WORKDIR /app
 
-# Comando padrão para manter o container rodando para acesso interativo
-CMD ["/bin/bash"]
+CMD ["bash", "-c", "sleep infinity"]
