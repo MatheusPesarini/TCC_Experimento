@@ -35,14 +35,20 @@ jobs:
           npm install eslint@^9.34.0 @typescript-eslint/eslint-plugin@^8.40.0 @typescript-eslint/parser@^8.40.0 @microsoft/eslint-formatter-sarif@3.1.0 --legacy-peer-deps
 # "GPT-5/task1/src"
       - name: Run ESLint
-        env:
-          SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
-        run: npx eslint "Claude4/task1/src" \
-          --config .eslintrc.js \
-          --ext .js,.jsx,.ts,.tsx \
-          --format @microsoft/eslint-formatter-sarif \
-          --output-file eslint-results.sarif
-        continue-on-error: true
+        # env:
+        #   SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
+        # run: npx eslint "Claude4/task1/src" \
+        #   --config .eslintrc.js \
+        #   --ext .js,.jsx,.ts,.tsx \
+        #   --format @microsoft/eslint-formatter-sarif \
+        #   --output-file eslint-results.sarif
+        # continue-on-error: true
+        run: |
+          npx eslint "GPT-5/**/src" "Claude4/**/src" \
+            --config .eslintrc.js \
+            --ext .js,.jsx,.ts,.tsx \
+            --format @microsoft/eslint-formatter-sarif \
+            -o eslint-results.sarif || true
 
       - name: Upload analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v3
