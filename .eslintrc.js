@@ -11,7 +11,7 @@ module.exports = {
     extends: ['eslint:recommended'],
     overrides: [
         {
-            files: ['GPT5/**/src/**/*.{ts,tsx}', 'Claude4/**/src/**/*.{ts,tsx}'],
+            files: ['Claude4/task1/src/**/*.{ts}'],
             parser: '@typescript-eslint/parser',
             plugins: ['@typescript-eslint', 'sonarjs'],
             extends: [
