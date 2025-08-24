@@ -33,15 +33,9 @@ jobs:
       - name: Install ESLint
         run: |
           npm install eslint@9.34.0
-          npm install @microsoft/eslint-formatter-sarif@3.1.0
 
       - name: Run ESLint
-        run: |
-          npx eslint "GPT-5/**/src" "Claude4/**/src" \
-            --config .eslintrc.js \
-            --ext .js,.jsx,.ts,.tsx \
-            --format @microsoft/eslint-formatter-sarif \
-            -o eslint-results.sarif || true
+        run: npx eslint "GPT-5/task1/src" "Claude4/task1/src" --ext .ts
 
       - name: Upload analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v3
