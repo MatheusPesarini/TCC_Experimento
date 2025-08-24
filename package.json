@@ -19,6 +19,7 @@
   "homepage": "https://github.com/MatheusPesarini/TCC_Experimento#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.40.0",
-    "@typescript-eslint/parser": "^8.40.0"
+    "@typescript-eslint/parser": "^8.40.0",
+    "eslint": "^9.34.0"
   }
 }
