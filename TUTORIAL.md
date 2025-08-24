@@ -9,6 +9,11 @@ sonar-scanner `
   -D"sonar.projectKey=claude4-task1" `
   -D"sonar.host.url=http://localhost:9000" `
   -D"sonar.login=$env:SONAR_TOKEN"
+
+sonar-scanner `
+  -D"sonar.projectKey=gpt-5-task1" `
+  -D"sonar.host.url=http://localhost:9000" `
+  -D"sonar.login=$env:SONAR_TOKEN"
 ```
 
 ### 3 - CodeQL

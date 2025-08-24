@@ -1,0 +1,6 @@
+projectKey=gpt-5-task1
+serverUrl=http://localhost:9000
+serverVersion=25.8.0.112029
+dashboardUrl=http://localhost:9000/dashboard?id=gpt-5-task1
+ceTaskId=1cc926b6-5357-457d-ae71-7987d9508592
+ceTaskUrl=http://localhost:9000/api/ce/task?id=1cc926b6-5357-457d-ae71-7987d9508592
