@@ -6,8 +6,11 @@ npm test -- --coverage
 ### 3 - SonarQube
 ```bash
 npm test -- --coverage
-$env:SONAR_TOKEN="sqa_eeec9d466a5019b700c593eebecd39a45e6b29e6"
 sonar-scanner.bat   
+sonar-scanner `
+  -D"sonar.projectKey=claude4-task1" `
+  -D"sonar.host.url=http://localhost:9000" `
+  -D"sonar.login=$env:SONAR_TOKEN"
 ```
 
 
