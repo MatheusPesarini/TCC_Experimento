@@ -7,9 +7,9 @@
   "scripts": {
     "test": "vitest",
     "test:watch": "vitest --watch",
-  "test:coverage": "vitest run --coverage",
-  "build": "tsc -p tsconfig.json",
-  "start": "node dist/server.js"
+    "test:coverage": "vitest run --coverage",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -18,11 +18,12 @@
     "@types/supertest": "^6.0.3",
     "@vitest/coverage-v8": "^3.2.4",
     "supertest": "^7.1.4",
-    "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   },
   "dependencies": {
     "@types/express": "^5.0.3",
-    "express": "^5.1.0"
+    "@types/node": "^24.3.0",
+    "express": "^5.1.0",
+    "typescript": "^5.9.2"
   }
 }

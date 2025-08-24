@@ -3,7 +3,7 @@
 ------------------------------------------------------------------------
 
 Objetivo
-Implemente um CRUD de usuário em Node.js usando TypeScript e Express 5.1.0. O código deve passar 100% dos testes do arquivo:
+Implemente um CRUD de usuário em Node.js usando TypeScript e Express 5.1.0. O código deve rodar e passar 100% dos testes do arquivo:
 c:\Users\mathe\Área de Trabalho\TCC_Experimento\Claude4\task1\task1.test.ts
 (Não altere o teste.)
 
@@ -50,6 +50,7 @@ Formato da resposta
 
 Critérios de aceitação
 - Todos os testes em task1.test.ts passam.
+- O código for executável.
 - Respostas não expõem “senha”.
 - dataDeCriacao é uma ISO válida.
 - Códigos de status e validações conforme descrito.
