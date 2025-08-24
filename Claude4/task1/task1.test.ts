@@ -82,18 +82,18 @@ describe('CRUD de Usuário - API', () => {
   });
 
   it('deve retornar 400 ao tentar criar usuário sem campos obrigatórios', async () => {
-    await request(app)
+    const resMissing = await request(app)
       .post('/usuarios')
-      .send({ email: uniqueEmail() }) 
-      .expect(400);
+      .send({ email: uniqueEmail() });
+    expect(resMissing.status).toBe(400);
   });
 
   describe('Validações e erros adicionais', () => {
     it('deve retornar 400 para dados inválidos (email inválido e senha curta)', async () => {
-      await request(app)
+      const resInvalid = await request(app)
         .post('/usuarios')
-        .send({ nome: 'João', email: 'invalido', senha: '123' })
-        .expect(400);
+        .send({ nome: 'João', email: 'invalido', senha: '123' });
+      expect(resInvalid.status).toBe(400);
     });
 
     it('deve retornar 409 ao criar usuário com email duplicado', async () => {
@@ -107,27 +107,34 @@ describe('CRUD de Usuário - API', () => {
     });
 
     it('GET /usuarios/:id deve retornar 404 quando não existir', async () => {
-      await request(app).get('/usuarios/999999999').expect(404);
+      const resNotFound = await request(app).get('/usuarios/999999999');
+      expect(resNotFound.status).toBe(404);
     });
 
     it('PATCH /usuarios/:id deve retornar 400 para id inválido', async () => {
-      await request(app).patch('/usuarios/abc').send({ nome: 'X' }).expect(400);
+      const resBadId = await request(app).patch('/usuarios/abc').send({ nome: 'X' });
+      expect(resBadId.status).toBe(400);
     });
 
     it('PATCH /usuarios/:id deve retornar 404 quando não existir', async () => {
-      await request(app).patch('/usuarios/999999999').send({ nome: 'X' }).expect(404);
+      const resPatchNotFound = await request(app).patch('/usuarios/999999999').send({ nome: 'X' });
+      expect(resPatchNotFound.status).toBe(404);
     });
 
     it('PATCH deve retornar 400 quando body estiver vazio', async () => {
       const novo = { nome: 'Carlos', email: uniqueEmail(), senha: 'SenhaSegura999' };
-      const { body } = await request(app).post('/usuarios').send(novo).expect(201);
-      const id = body.id;
+      const resCreate = await request(app).post('/usuarios').send(novo);
+      expect(resCreate.status).toBe(201);
 
-      await request(app).patch(`/usuarios/${id}`).send({}).expect(400);
+      const id = resCreate.body.id;
+
+      const resEmpty = await request(app).patch(`/usuarios/${id}`).send({});
+      expect(resEmpty.status).toBe(400);
     });
 
     it('DELETE /usuarios/:id deve retornar 404 quando não existir', async () => {
-      await request(app).delete('/usuarios/999999999').expect(404);
+      const resDelete = await request(app).delete('/usuarios/999999999');
+      expect(resDelete.status).toBe(404);
     });
   });
 });
