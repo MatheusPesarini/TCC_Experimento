@@ -4,12 +4,12 @@
 
 Objetivo
 Implemente um CRUD de usuário em Node.js usando TypeScript e Express 5.1.0. O código deve rodar e passar 100% dos testes do arquivo:
-c:\Users\mathe\Área de Trabalho\TCC_Experimento\[MODELO]\task1\task1.test.ts
+C:\Users\mathe\Desktop\TCC_Experimento\Claude4\task1\task1.test.ts
 (Não altere o teste.)
 
 Ambiente/Versões
 - Node.js 22.20.0 LTS
-- TypeScript 5.9.2 (strict mode habilitado)
+- TypeScript 5.9.3 (strict mode habilitado)
 - Express 5.1.0
 - Testes: Vitest + Supertest (já configurados no projeto)
 
@@ -91,27 +91,11 @@ Você tem total liberdade para:
 O importante é que o código passe em todos os testes e seja bem estruturado.
 
 Formato da Resposta
-1) Liste a estrutura de pastas/arquivos que você criou, no formato de árvore:
-   Exemplo:
-   src/
-   ├── app.ts
-   ├── routes/
-   │   └── usuario.routes.ts
-   ├── controllers/
-   │   └── usuario.controller.ts
-   └── models/
-       └── usuario.model.ts
+1) Liste a estrutura de pastas/arquivos que você criou, no formato de árvore
 
-2) Forneça o código completo de cada arquivo necessário:
-   - Use blocos de código TypeScript com syntax highlighting
-   - Inclua na primeira linha de cada bloco um comentário com o caminho completo:
-     // filepath: c:\Users\mathe\Área de Trabalho\TCC_Experimento\[MODELO]\task1\src\app.ts
-
-3) Forneça instruções de execução:
+2) Forneça instruções de execução:
    - Comandos npm necessários (se houver dependências adicionais)
    - Comando para rodar os testes (npm test)
-
-4) (Opcional) Breve explicação das escolhas arquiteturais (máximo 5 linhas)
 
 Critérios de Aceitação
 ✓ Todos os testes em task1.test.ts devem passar (100% de sucesso)
