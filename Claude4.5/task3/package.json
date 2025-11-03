@@ -1,0 +1,27 @@
+{
+  "name": "task1",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest run --coverage",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/supertest": "^6.0.3",
+    "@vitest/coverage-v8": "^4.0.2",
+    "supertest": "^7.1.4",
+    "vitest": "^4.0.2"
+  },
+  "dependencies": {
+    "@types/node": "^24.9.1",
+    "typescript": "^5.9.3"
+  }
+}
