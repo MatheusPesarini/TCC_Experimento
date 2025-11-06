@@ -82,11 +82,7 @@ Restrições Técnicas
 - Armazenamento em memória (array) é suficiente para este experimento
 
 Liberdade Arquitetural
-Você tem total liberdade para:
-- Organizar estrutura de pastas e arquivos
-- Escolher padrões arquiteturais (MVC, camadas, etc)
-- Nomear arquivos, classes, funções e variáveis
-- Adicionar funções auxiliares, middlewares, tipos customizados
+Total liberdade para: estrutura de pastas, padrões arquiteturais (MVC, DDD, camadas, repositories, services), nomenclatura, funções auxiliares, middlewares, tipos customizados, classes para cálculos, separação de validações/regras/estoque. (Não crie estruturas em único arquivo)
 
 O importante é que o código passe em todos os testes e seja bem estruturado.
 

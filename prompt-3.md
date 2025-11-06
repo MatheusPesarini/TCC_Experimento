@@ -153,7 +153,7 @@ Restrições Técnicas
 - Precisão decimal em cálculos financeiros
 
 Liberdade Arquitetural
-Total liberdade para: estrutura de pastas, padrões arquiteturais (MVC, DDD, camadas, repositories, services), nomenclatura, funções auxiliares, middlewares, tipos customizados, classes para cálculos, separação de validações/regras/estoque.
+Total liberdade para: estrutura de pastas, padrões arquiteturais (MVC, DDD, camadas, repositories, services), nomenclatura, funções auxiliares, middlewares, tipos customizados, classes para cálculos, separação de validações/regras/estoque. (Não crie estruturas em único arquivo)
 
 Formato da Resposta
 1) Estrutura de pastas (formato árvore)

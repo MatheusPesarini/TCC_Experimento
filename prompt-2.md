@@ -185,13 +185,7 @@ Restrições Técnicas
 - Implementar relacionamento entre livros e empréstimos de forma consistente
 
 Liberdade Arquitetural
-Você tem total liberdade para:
-- Organizar estrutura de pastas e arquivos
-- Escolher padrões arquiteturais (MVC, camadas, repositórios, services, etc)
-- Nomear arquivos, classes, funções e variáveis
-- Adicionar funções auxiliares, middlewares, tipos customizados
-- Criar camadas de serviço para lógica de negócio
-- Separar validações e regras de negócio
+Total liberdade para: estrutura de pastas, padrões arquiteturais (MVC, DDD, camadas, repositories, services), nomenclatura, funções auxiliares, middlewares, tipos customizados, classes para cálculos, separação de validações/regras/estoque. (Não crie estruturas em único arquivo)
 
 O importante é que o código passe em todos os testes, seja bem estruturado e mantenha a consistência dos dados.
 
