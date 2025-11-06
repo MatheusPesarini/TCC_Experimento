@@ -33,7 +33,7 @@ class PedidoRepository {
 
   update(id: number, updates: Partial<Pedido>): Pedido | undefined {
     const index = this.pedidos.findIndex(p => p.id === id);
-    
+
     if (index === -1) {
       return undefined;
     }
@@ -49,7 +49,7 @@ class PedidoRepository {
 
   delete(id: number): boolean {
     const index = this.pedidos.findIndex(p => p.id === id);
-    
+
     if (index === -1) {
       return false;
     }
@@ -59,8 +59,8 @@ class PedidoRepository {
   }
 
   findPedidosComProduto(produtoId: number): Pedido[] {
-    return this.pedidos.filter(pedido => 
-      pedido.status !== 'cancelado' && 
+    return this.pedidos.filter(pedido =>
+      pedido.status !== 'cancelado' &&
       pedido.itens.some(item => item.produtoId === produtoId)
     );
   }

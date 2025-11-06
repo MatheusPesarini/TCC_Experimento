@@ -7,11 +7,11 @@ export function isValidEmail(email: string): boolean {
 export function hasMaxTwoDecimals(value: number): boolean {
   const str = value.toString();
   const decimalIndex = str.indexOf('.');
-  
+
   if (decimalIndex === -1) {
     return true;
   }
-  
+
   const decimals = str.substring(decimalIndex + 1);
   return decimals.length <= 2;
 }

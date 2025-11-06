@@ -18,13 +18,13 @@ class ProdutoController {
   async findAll(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
       const { categoria, ativo } = req.query;
-      
+
       const filters: { categoria?: string; ativo?: string } = {};
-      
+
       if (categoria && typeof categoria === 'string') {
         filters.categoria = categoria;
       }
-      
+
       if (ativo && typeof ativo === 'string') {
         filters.ativo = ativo;
       }

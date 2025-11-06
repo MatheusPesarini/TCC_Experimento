@@ -18,13 +18,13 @@ class PedidoController {
   async findAll(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
       const { status, clienteEmail } = req.query;
-      
+
       const filters: { status?: string; clienteEmail?: string } = {};
-      
+
       if (status && typeof status === 'string') {
         filters.status = status;
       }
-      
+
       if (clienteEmail && typeof clienteEmail === 'string') {
         filters.clienteEmail = clienteEmail;
       }

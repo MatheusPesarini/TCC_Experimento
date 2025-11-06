@@ -33,7 +33,7 @@ class ProdutoRepository {
 
   update(id: number, updates: Partial<Produto>): Produto | undefined {
     const index = this.produtos.findIndex(p => p.id === id);
-    
+
     if (index === -1) {
       return undefined;
     }
@@ -48,7 +48,7 @@ class ProdutoRepository {
 
   delete(id: number): boolean {
     const index = this.produtos.findIndex(p => p.id === id);
-    
+
     if (index === -1) {
       return false;
     }
@@ -59,7 +59,7 @@ class ProdutoRepository {
 
   decrementarEstoque(id: number, quantidade: number): boolean {
     const produto = this.findById(id);
-    
+
     if (!produto) {
       return false;
     }
@@ -74,7 +74,7 @@ class ProdutoRepository {
 
   incrementarEstoque(id: number, quantidade: number): boolean {
     const produto = this.findById(id);
-    
+
     if (!produto) {
       return false;
     }
