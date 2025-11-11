@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "lint:claude4": "eslint Claude4/task1/src --ext .ts",
-    "lint:gpt5": "eslint GPT-5/task1/src --ext .ts"
+    "lint:claude4task1": "eslint Claude4.5/task1/src --ext .ts",
+    "lint:claude4task2": "eslint Claude4.5/task2/src --ext .ts",
+    "lint:claude4task3": "eslint Claude4.5/task3/src --ext .ts",
+    "lint:gpt5task1": "eslint GPT-5/task1/src --ext .ts",
+    "lint:gpt5task2": "eslint GPT-5/task2/src --ext .ts",
+    "lint:gpt5task3": "eslint GPT-5/task3/src --ext .ts"
   },
   "devDependencies": {
-    "@eslint/js": "^9.38.0",
-    "@typescript-eslint/eslint-plugin": "^8.46.1",
-    "@typescript-eslint/parser": "^8.46.1",
-    "eslint": "^9.38.0",
-    "eslint-plugin-unicorn": "^61.0.2",
+    "@eslint/js": "^9.39.1",
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
+    "eslint": "^9.39.1",
+    "eslint-plugin-unicorn": "^62.0.0",
     "typescript": "^5.9.3"
   }
 }

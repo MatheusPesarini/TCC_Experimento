@@ -1,4 +1,4 @@
-import { Produto } from '../types/produto.types';
+import { Produto } from '../types/produto.types.js';
 
 class ProdutoRepository {
   private produtos: Produto[] = [];

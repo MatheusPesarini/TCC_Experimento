@@ -1,7 +1,7 @@
 import express from 'express';
-import produtosRouter from './routes/produtos.routes';
-import pedidosRouter from './routes/pedidos.routes';
-import { errorHandler } from './middlewares/error-handler';
+import produtosRouter from './routes/produtos.routes.js';
+import pedidosRouter from './routes/pedidos.routes.js';
+import { errorHandler } from './middlewares/error-handler.js';
 
 const app = express();
 

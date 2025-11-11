@@ -1,8 +1,8 @@
-import pedidoRepository from '../repositories/pedido.repository';
-import produtoRepository from '../repositories/produto.repository';
-import { CreatePedidoDTO, Pedido, StatusPedido, ItemPedido } from '../types/pedido.types';
-import { BadRequestError, NotFoundError, ConflictError } from '../types/errors.types';
-import { isValidEmail, roundToTwo } from '../utils/validators';
+import pedidoRepository from '../repositories/pedido.repository.js';
+import produtoRepository from '../repositories/produto.repository.js';
+import { CreatePedidoDTO, Pedido, StatusPedido, ItemPedido } from '../types/pedido.types.js';
+import { BadRequestError, NotFoundError, ConflictError } from '../types/errors.types.js';
+import { isValidEmail, roundToTwo } from '../utils/validators.js';
 
 class PedidoService {
   create(data: CreatePedidoDTO): Pedido {

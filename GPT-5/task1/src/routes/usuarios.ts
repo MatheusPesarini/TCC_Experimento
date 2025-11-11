@@ -1,14 +1,14 @@
 import { Router, Request, Response } from 'express';
-import { usuarioRepo } from '../repo/usuarioRepo';
+import { usuarioRepo } from '../repo/usuarioRepo.js';
 import {
   hasAtLeastOneUpdatableField,
   isNonEmptyString,
   isValidEmail,
   isValidPassword,
   parseIdParam,
-} from '../utils/validators';
-import { toPublicList, toPublicUser } from '../utils/transform';
-import { UpdateUsuarioInput } from '../types';
+} from '../utils/validators.js';
+import { toPublicList, toPublicUser } from '../utils/transform.js';
+import { UpdateUsuarioInput } from '../types.js';
 
 export const usuariosRouter = Router();
 

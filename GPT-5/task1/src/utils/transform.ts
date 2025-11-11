@@ -1,4 +1,4 @@
-import { Usuario, UsuarioPublico } from '../types';
+import { Usuario, UsuarioPublico } from '../types.js';
 
 export const toPublicUser = (u: Usuario): UsuarioPublico => {
   // Remover campo senha nas respostas

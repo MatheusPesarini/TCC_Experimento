@@ -1,6 +1,6 @@
 import { Router, type Request, type Response } from 'express';
-import { LivrosService } from '../services/livrosService';
-import { isValidIdParam } from '../utils/validators';
+import { LivrosService } from '../services/livrosService.js';
+import { isValidIdParam } from '../utils/validators.js';
 
 export const livrosRouter = Router();
 

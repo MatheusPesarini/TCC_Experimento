@@ -1,4 +1,4 @@
-import { CreateUsuarioInput, UpdateUsuarioInput, Usuario } from '../types';
+import { CreateUsuarioInput, UpdateUsuarioInput, Usuario } from '../types.js';
 
 class UsuarioRepo {
   private data: Usuario[] = [];

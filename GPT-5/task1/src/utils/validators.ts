@@ -1,4 +1,4 @@
-import { UpdateUsuarioInput } from '../types';
+import { UpdateUsuarioInput } from '../types.js';
 
 export const isNonEmptyString = (value: unknown): value is string =>
   typeof value === 'string' && value.trim().length > 0;

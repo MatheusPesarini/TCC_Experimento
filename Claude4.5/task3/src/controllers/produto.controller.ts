@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
-import produtoService from '../services/produto.service';
-import { CreateProdutoDTO, UpdateProdutoDTO } from '../types/produto.types';
-import { isValidId } from '../utils/validators';
-import { BadRequestError } from '../types/errors.types';
+import produtoService from '../services/produto.service.js';
+import { CreateProdutoDTO, UpdateProdutoDTO } from '../types/produto.types.js';
+import { isValidId } from '../utils/validators.js';
+import { BadRequestError } from '../types/errors.types.js';
 
 class ProdutoController {
   async create(req: Request, res: Response, next: NextFunction): Promise<void> {

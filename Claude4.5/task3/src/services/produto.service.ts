@@ -1,8 +1,8 @@
-import produtoRepository from '../repositories/produto.repository';
-import pedidoRepository from '../repositories/pedido.repository';
-import { CreateProdutoDTO, UpdateProdutoDTO, Produto } from '../types/produto.types';
-import { BadRequestError, NotFoundError, ConflictError } from '../types/errors.types';
-import { hasMaxTwoDecimals, isPositiveInteger } from '../utils/validators';
+import produtoRepository from '../repositories/produto.repository.js';
+import pedidoRepository from '../repositories/pedido.repository.js';
+import { CreateProdutoDTO, UpdateProdutoDTO, Produto } from '../types/produto.types.js';
+import { BadRequestError, NotFoundError, ConflictError } from '../types/errors.types.js';
+import { hasMaxTwoDecimals, isPositiveInteger } from '../utils/validators.js';
 
 class ProdutoService {
   create(data: CreateProdutoDTO): Produto {

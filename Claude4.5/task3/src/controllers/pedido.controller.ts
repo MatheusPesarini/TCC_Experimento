@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
-import pedidoService from '../services/pedido.service';
-import { CreatePedidoDTO, StatusPedido } from '../types/pedido.types';
-import { isValidId } from '../utils/validators';
-import { BadRequestError } from '../types/errors.types';
+import pedidoService from '../services/pedido.service.js';
+import { CreatePedidoDTO, StatusPedido } from '../types/pedido.types.js';
+import { isValidId } from '../utils/validators.js';
+import { BadRequestError } from '../types/errors.types.js';
 
 class PedidoController {
   async create(req: Request, res: Response, next: NextFunction): Promise<void> {

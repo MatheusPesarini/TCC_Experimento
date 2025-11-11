@@ -1,6 +1,6 @@
-import { Livro } from '../models';
-import { DB } from '../storage';
-import { isValidISBN13Hyphenated, isNonEmptyString, isPositiveInt } from '../utils/validators';
+import { Livro } from '../models.js';
+import { DB } from '../storage.js';
+import { isValidISBN13Hyphenated, isNonEmptyString, isPositiveInt } from '../utils/validators.js';
 
 export type CreateLivroInput = {
   titulo: unknown;

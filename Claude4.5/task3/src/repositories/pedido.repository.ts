@@ -1,4 +1,4 @@
-import { Pedido, StatusPedido } from '../types/pedido.types';
+import { Pedido, StatusPedido } from '../types/pedido.types.js';
 
 class PedidoRepository {
   private pedidos: Pedido[] = [];

@@ -1,6 +1,6 @@
 import { Router, type Request, type Response } from 'express';
-import { EmprestimosService } from '../services/emprestimosService';
-import { isValidIdParam } from '../utils/validators';
+import { EmprestimosService } from '../services/emprestimosService.js';
+import { isValidIdParam } from '../utils/validators.js';
 
 export const emprestimosRouter = Router();
 

@@ -1,6 +1,6 @@
-import { Emprestimo, EmprestimoComLivroBasico, EmprestimoComLivroCompleto, Livro } from '../models';
-import { DB } from '../storage';
-import { isNonEmptyString, isPositiveInt, isValidEmail, isValidISODate } from '../utils/validators';
+import { Emprestimo, EmprestimoComLivroBasico, EmprestimoComLivroCompleto, Livro } from '../models.js';
+import { DB } from '../storage.js';
+import { isNonEmptyString, isPositiveInt, isValidEmail, isValidISODate } from '../utils/validators.js';
 
 export type CreateEmprestimoInput = {
   livroId: unknown;

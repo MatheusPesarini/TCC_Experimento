@@ -1,6 +1,6 @@
 import express from 'express';
-import { livrosRouter } from './routes/livros';
-import { emprestimosRouter } from './routes/emprestimos';
+import { livrosRouter } from './routes/livros.js';
+import { emprestimosRouter } from './routes/emprestimos.js';
 
 const app = express();
 app.use(express.json());
