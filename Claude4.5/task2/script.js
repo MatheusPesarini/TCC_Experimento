@@ -10,49 +10,80 @@ export const options = {
 const BASE_URL = __ENV.BASE_URL || "http://localhost:3000";
 
 export default function () {
-    // 1) Criar usuário
-    const payload = JSON.stringify({
-        nome: `Usuário-${Math.random().toString(36).substring(7)}`,
-        email: `email${Math.floor(Math.random() * 10000)}@teste.com`,
-        senha: "SenhaSegura123"
-    });
-
     const headers = { "Content-Type": "application/json" };
-    let res = http.post(`${BASE_URL}/usuarios`, payload, { headers });
 
-    check(res, {
-        "createUser status 201": (r) => r.status === 201,
+    // 1) Criar livro
+    const livroPayload = JSON.stringify({
+        titulo: `Livro-${Math.random().toString(36).substring(7)}`,
+        autor: `Autor ${Math.floor(Math.random() * 1000)}`,
+        isbn: `${Math.floor(100 + Math.random() * 900)}-${Math.floor(1 + Math.random() * 9)}-${Math.floor(10 + Math.random() * 90)}-${Math.floor(100000 + Math.random() * 900000)}-${Math.floor(1 + Math.random() * 9)}`,
+        quantidadeTotal: Math.floor(1 + Math.random() * 10)
     });
 
-    const user = res.json();
-    const userId = user?.id;
-
-    // 2) Buscar todos usuários
-    res = http.get(`${BASE_URL}/usuarios`);
+    let res = http.post(`${BASE_URL}/livros`, livroPayload, { headers });
     check(res, {
-        "getAllUsers status 200": (r) => r.status === 200,
+        "createLivro status 201": (r) => r.status === 201,
     });
 
-    // 3) Buscar usuário por ID (se criado com sucesso)
-    if (userId) {
-        res = http.get(`${BASE_URL}/usuarios/${userId}`);
+    const livro = res.json();
+    const livroId = livro?.id;
+
+    // 2) Buscar todos os livros
+    res = http.get(`${BASE_URL}/livros`);
+    check(res, {
+        "getAllLivros status 200": (r) => r.status === 200,
+    });
+
+    // 3) Buscar livro por ID
+    if (livroId) {
+        res = http.get(`${BASE_URL}/livros/${livroId}`);
         check(res, {
-            "getUserById status 200": (r) => r.status === 200,
+            "getLivroById status 200": (r) => r.status === 200,
         });
 
-        // 4) Atualizar usuário
-        const updatePayload = JSON.stringify({ nome: "Usuário Atualizado" });
-        res = http.patch(`${BASE_URL}/usuarios/${userId}`, updatePayload, { headers });
-        check(res, {
-            "updateUser status 200": (r) => r.status === 200,
+        // 4) Criar empréstimo
+        const emprestimoPayload = JSON.stringify({
+            livroId: livroId,
+            nomeUsuario: `Usuario ${Math.floor(Math.random() * 1000)}`,
+            emailUsuario: `user${Math.floor(Math.random() * 10000)}@test.com`,
+            dataEmprestimo: new Date().toISOString()
         });
 
-        // 5) Deletar usuário (sua API retorna 204)
-        res = http.del(`${BASE_URL}/usuarios/${userId}`);
+        res = http.post(`${BASE_URL}/emprestimos`, emprestimoPayload, { headers });
         check(res, {
-            "deleteUser status 204": (r) => r.status === 204,
+            "createEmprestimo status 201": (r) => r.status === 201,
+        });
+
+        const emprestimo = res.json();
+        const emprestimoId = emprestimo?.id;
+
+        // 5) Buscar todos empréstimos
+        res = http.get(`${BASE_URL}/emprestimos`);
+        check(res, {
+            "getAllEmprestimos status 200": (r) => r.status === 200,
+        });
+
+        // 6) Devolver empréstimo
+        if (emprestimoId) {
+            res = http.patch(`${BASE_URL}/emprestimos/${emprestimoId}/devolver`, null, { headers });
+            check(res, {
+                "devolverEmprestimo status 200": (r) => r.status === 200,
+            });
+        }
+
+        // 7) Atualizar livro
+        const updateLivroPayload = JSON.stringify({ titulo: "Livro Atualizado" });
+        res = http.patch(`${BASE_URL}/livros/${livroId}`, updateLivroPayload, { headers });
+        check(res, {
+            "updateLivro status 200": (r) => r.status === 200,
+        });
+
+        // 8) Deletar livro
+        res = http.del(`${BASE_URL}/livros/${livroId}`);
+        check(res, {
+            "deleteLivro status 204": (r) => r.status === 204,
         });
     }
 
-    sleep(1); // cada usuário espera 1s antes de repetir
+    sleep(1);
 }

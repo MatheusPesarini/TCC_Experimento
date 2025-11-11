@@ -1,6 +1,6 @@
 
 import { Request, Response, NextFunction } from 'express';
-import { ValidationError } from '../types/errors';
+import { ValidationError } from '../types/errors.js';
 
 export const validateNumericId = (
   req: Request,

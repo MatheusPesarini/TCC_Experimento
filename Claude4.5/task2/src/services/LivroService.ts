@@ -1,8 +1,8 @@
 
-import { LivroRepository } from '../repositories/LivroRepository';
-import { EmprestimoRepository } from '../repositories/EmprestimoRepository';
-import { Livro, CreateLivroDTO, UpdateLivroDTO } from '../types';
-import { ValidationError, NotFoundError, ConflictError } from '../types/errors';
+import { LivroRepository } from '../repositories/LivroRepository.js';
+import { EmprestimoRepository } from '../repositories/EmprestimoRepository.js';
+import { Livro, CreateLivroDTO, UpdateLivroDTO } from '../types/index.js';
+import { ValidationError, NotFoundError, ConflictError } from '../types/errors.js';
 
 export class LivroService {
   constructor(

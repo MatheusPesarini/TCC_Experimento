@@ -1,7 +1,7 @@
 
 import { Router } from 'express';
-import { EmprestimoController } from '../controllers/EmprestimoController';
-import { validateNumericId } from '../middlewares/validators';
+import { EmprestimoController } from '../controllers/EmprestimoController.js';
+import { validateNumericId } from '../middlewares/validators.js';
 
 export const createEmprestimoRoutes = (emprestimoController: EmprestimoController): Router => {
   const router = Router();

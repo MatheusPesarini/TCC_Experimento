@@ -1,5 +1,5 @@
 
-import { Emprestimo, CreateEmprestimoDTO } from '../types';
+import { Emprestimo, CreateEmprestimoDTO } from '../types/index.js';
 
 export class EmprestimoRepository {
   private emprestimos: Emprestimo[] = [];

@@ -1,14 +1,14 @@
 
 import express, { Express } from 'express';
-import { LivroRepository } from './repositories/LivroRepository';
-import { EmprestimoRepository } from './repositories/EmprestimoRepository';
-import { LivroService } from './services/LivroService';
-import { EmprestimoService } from './services/EmprestimoService';
-import { LivroController } from './controllers/LivroController';
-import { EmprestimoController } from './controllers/EmprestimoController';
-import { createLivroRoutes } from './routes/livroRoutes';
-import { createEmprestimoRoutes } from './routes/emprestimoRoutes';
-import { errorHandler } from './middlewares/errorHandler';
+import { LivroRepository } from './repositories/LivroRepository.js';
+import { EmprestimoRepository } from './repositories/EmprestimoRepository.js';
+import { LivroService } from './services/LivroService.js';
+import { EmprestimoService } from './services/EmprestimoService.js';
+import { LivroController } from './controllers/LivroController.js';
+import { EmprestimoController } from './controllers/EmprestimoController.js';
+import { createLivroRoutes } from './routes/livroRoutes.js';
+import { createEmprestimoRoutes } from './routes/emprestimoRoutes.js';
+import { errorHandler } from './middlewares/errorHandler.js';
 
 // Criar instâncias dos repositórios
 const livroRepository = new LivroRepository();

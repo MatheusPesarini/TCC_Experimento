@@ -1,7 +1,7 @@
 
 import { Router } from 'express';
-import { LivroController } from '../controllers/LivroController';
-import { validateNumericId, validateRequestBody } from '../middlewares/validators';
+import { LivroController } from '../controllers/LivroController.js';
+import { validateNumericId, validateRequestBody } from '../middlewares/validators.js';
 
 export const createLivroRoutes = (livroController: LivroController): Router => {
   const router = Router();

@@ -1,7 +1,7 @@
 
 import { Request, Response, NextFunction } from 'express';
-import { LivroService } from '../services/LivroService';
-import { CreateLivroDTO, UpdateLivroDTO } from '../types';
+import { LivroService } from '../services/LivroService.js';
+import { CreateLivroDTO, UpdateLivroDTO } from '../types/index.js';
 
 export class LivroController {
   constructor(private livroService: LivroService) { }

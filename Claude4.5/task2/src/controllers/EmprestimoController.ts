@@ -1,7 +1,7 @@
 
 import { Request, Response, NextFunction } from 'express';
-import { EmprestimoService } from '../services/EmprestimoService';
-import { CreateEmprestimoDTO } from '../types';
+import { EmprestimoService } from '../services/EmprestimoService.js';
+import { CreateEmprestimoDTO } from '../types/index.js';
 
 export class EmprestimoController {
   constructor(private emprestimoService: EmprestimoService) { }

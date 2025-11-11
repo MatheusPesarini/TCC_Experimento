@@ -1,5 +1,5 @@
 
-import { Livro, CreateLivroDTO, UpdateLivroDTO } from '../types';
+import { Livro, CreateLivroDTO, UpdateLivroDTO } from '../types/index.js';
 
 export class LivroRepository {
   private livros: Livro[] = [];
