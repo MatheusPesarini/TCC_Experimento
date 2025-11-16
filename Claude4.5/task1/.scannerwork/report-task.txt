@@ -2,5 +2,5 @@ projectKey=claude4-task1
 serverUrl=http://localhost:9000
 serverVersion=25.11.0.114957
 dashboardUrl=http://localhost:9000/dashboard?id=claude4-task1
-ceTaskId=f1b9ff9e-4a46-4a24-9b23-527e60e0b98a
-ceTaskUrl=http://localhost:9000/api/ce/task?id=f1b9ff9e-4a46-4a24-9b23-527e60e0b98a
+ceTaskId=7848e115-8bd9-44fa-ac9f-b6a160fab154
+ceTaskUrl=http://localhost:9000/api/ce/task?id=7848e115-8bd9-44fa-ac9f-b6a160fab154

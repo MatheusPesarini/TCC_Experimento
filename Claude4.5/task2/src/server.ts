@@ -1,8 +1,9 @@
+
 import app from './app.js';
 
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  // eslint-disable-next-line no-console
-  console.log(`API rodando em http://localhost:${PORT}`);
+  console.log(`🚀 Servidor rodando na porta ${PORT}`);
+  console.log(`📚 Sistema de Gerenciamento de Biblioteca`);
 });

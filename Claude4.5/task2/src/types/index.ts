@@ -9,6 +9,20 @@ export interface Livro {
   dataDeCadastro: string;
 }
 
+export interface CriarLivroDTO {
+  titulo: string;
+  autor: string;
+  isbn: string;
+  quantidadeTotal: number;
+}
+
+export interface AtualizarLivroDTO {
+  titulo?: string;
+  autor?: string;
+  isbn?: string;
+  quantidadeTotal?: number;
+}
+
 export interface Emprestimo {
   id: number;
   livroId: number;
@@ -20,23 +34,16 @@ export interface Emprestimo {
   status: 'ativo' | 'devolvido';
 }
 
-export interface CreateLivroDTO {
-  titulo: string;
-  autor: string;
-  isbn: string;
-  quantidadeTotal: number;
-}
-
-export interface UpdateLivroDTO {
-  titulo?: string;
-  autor?: string;
-  isbn?: string;
-  quantidadeTotal?: number;
-}
-
-export interface CreateEmprestimoDTO {
+export interface CriarEmprestimoDTO {
   livroId: number;
   nomeUsuario: string;
   emailUsuario: string;
   dataEmprestimo: string;
+}
+
+export interface EmprestimoComLivro extends Emprestimo {
+  livro: {
+    titulo: string;
+    autor: string;
+  };
 }
