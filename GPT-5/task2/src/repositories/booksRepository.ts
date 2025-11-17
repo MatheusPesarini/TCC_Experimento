@@ -1,4 +1,4 @@
-import { Livro } from '../models';
+import { Livro } from '../models.js';
 
 let books: Livro[] = [];
 let nextId = 1;

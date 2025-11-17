@@ -1,4 +1,4 @@
-import { Emprestimo } from '../models';
+import { Emprestimo } from '../models.js';
 
 let loans: Emprestimo[] = [];
 let nextId = 1;

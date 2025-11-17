@@ -1,7 +1,7 @@
-import { Livro } from '../models';
-import { booksRepository } from '../repositories/booksRepository';
-import { loansRepository } from '../repositories/loansRepository';
-import { isNonEmptyString, isPositiveInt, isValidIsbn } from '../validators';
+import { Livro } from '../models.js';
+import { booksRepository } from '../repositories/booksRepository.js';
+import { loansRepository } from '../repositories/loansRepository.js';
+import { isNonEmptyString, isPositiveInt, isValidIsbn } from '../validators.js';
 
 interface CreateLivroDTO {
   titulo: unknown;

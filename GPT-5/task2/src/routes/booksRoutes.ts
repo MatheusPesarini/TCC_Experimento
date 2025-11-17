@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { booksService } from '../services/booksService';
+import { booksService } from '../services/booksService.js';
 
 export const booksRouter = Router();
 

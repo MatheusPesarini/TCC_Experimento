@@ -1,4 +1,4 @@
-import app from './app';
+import app from './app.js';
 
 const portEnv = process.env.PORT;
 const port = portEnv ? Number(portEnv) : 3000;

@@ -1,6 +1,6 @@
 import express from 'express';
-import { booksRouter } from './routes/booksRoutes';
-import { loansRouter } from './routes/loansRoutes';
+import { booksRouter } from './routes/booksRoutes.js';
+import { loansRouter } from './routes/loansRoutes.js';
 
 const app = express();
 app.use(express.json());

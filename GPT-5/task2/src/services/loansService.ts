@@ -1,7 +1,7 @@
-import { Emprestimo, Livro } from '../models';
-import { booksRepository } from '../repositories/booksRepository';
-import { loansRepository } from '../repositories/loansRepository';
-import { isNonEmptyString, isPositiveInt, isValidEmail, isValidIsoDate } from '../validators';
+import { Emprestimo, Livro } from '../models.js';
+import { booksRepository } from '../repositories/booksRepository.js';
+import { loansRepository } from '../repositories/loansRepository.js';
+import { isNonEmptyString, isPositiveInt, isValidEmail, isValidIsoDate } from '../validators.js';
 
 interface CreateEmprestimoDTO {
   livroId: unknown;
