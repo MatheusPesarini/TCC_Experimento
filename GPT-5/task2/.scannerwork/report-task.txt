@@ -2,5 +2,5 @@ projectKey=gpt-5-task2
 serverUrl=http://localhost:9000
 serverVersion=25.11.0.114957
 dashboardUrl=http://localhost:9000/dashboard?id=gpt-5-task2
-ceTaskId=b4ae2103-3566-406c-b964-0c546d380c5d
-ceTaskUrl=http://localhost:9000/api/ce/task?id=b4ae2103-3566-406c-b964-0c546d380c5d
+ceTaskId=9eef5399-ac17-4d05-b99e-a8dce0767b45
+ceTaskUrl=http://localhost:9000/api/ce/task?id=9eef5399-ac17-4d05-b99e-a8dce0767b45
