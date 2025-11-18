@@ -1,26 +1,32 @@
 {
-  "name": "task1",
+  "name": "task3",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sistema de Gerenciamento de Pedidos com Controle de Estoque",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/app.js",
   "scripts": {
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest run --coverage",
     "build": "tsc -p tsconfig.json",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "dev": "npm run build && npm start"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "@types/supertest": "^6.0.3",
+    "@types/validator": "^13.12.2",
     "@vitest/coverage-v8": "^4.0.2",
     "supertest": "^7.1.4",
+    "typescript": "^5.9.3",
     "vitest": "^4.0.2"
   },
   "dependencies": {
     "@types/node": "^24.9.1",
+    "express": "^5.1.0",
+    "validator": "^13.12.0"
   }
 }
